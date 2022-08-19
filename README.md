@@ -32,6 +32,10 @@ gradle clean build;
 aws lambda update-function-code --function-name ${AWS_LAMBDA_FUNCTION_NAME} --zip-file fileb://build/libs/logapp-2.0.0.RELEASE-aws.jar;
 ```
 
+### Defining the function Handler on AWS:
+``com.dias.logapp.invoke.CustomFunctionInvoker::handleRequest
+``
+
 
 ### Install the Datadog CLI with NPM
 This process is required only once
