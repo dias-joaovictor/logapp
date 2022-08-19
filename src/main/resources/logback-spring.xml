@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <springProfile name="dev,default">
+        <include resource="org/springframework/boot/logging/logback/base.xml" />
+        <logger level="DEBUG" name="com.dias"/>
+        <root level="INFO" >
+            <appender-ref ref="CONSOLE"/>
+        </root>>
+    </springProfile>
+
+    <springProfile name="tst">
+        <root level="INFO">
+            <appender-ref ref="JSON"/>
+        </root>
+    </springProfile>
+</configuration>
